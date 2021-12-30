@@ -26,7 +26,7 @@
                                     <a href="type-product-<?= $value['MaDM'] ?>" class="cat-block">
                                         <figure>
                                             <span>
-                                                <img src="public/assets/images/demos/demo-4/cats/<?= $value['HinhAnh'] ?>" alt="Category image">
+                                                <img src="public/assets/images/demos/demo-4/cats/<?= $value['HinhAnh']?>" alt="Category image">
                                             </span>
                                         </figure>
 

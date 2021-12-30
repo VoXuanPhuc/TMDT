@@ -6,11 +6,16 @@ switch ($act) {
     case 'home':
         require_once("Controllers/HomeController.php");
         $list_homecontroller = new HomeController();
-        $list_homecontroller->list();
+        if (isset($_GET['code'])) {
+            $list_homecontroller->loginWithgg();
+        } else {
+            $list_homecontroller->list();
+        }
         break;
     case 'shop':
         require_once('Controllers/ShopController.php');
         $ShopController = new ShopController();
+
         $ShopController->list();
         break;
     case 'video':
@@ -133,7 +138,7 @@ switch ($act) {
     case 'contact':
         require_once("Views/contact/contact.php");
         break;
-    case'comingsoon':
+    case 'comingsoon':
         require_once("Controllers/ComingSoonController.php");
         $list_coming = new ComingSoonController();
         $list_coming->list();
@@ -141,6 +146,10 @@ switch ($act) {
     default:
         require_once("Controllers/HomeController.php");
         $list_homecontroller = new HomeController();
-        $list_homecontroller->list();
+        if (isset($_GET['code'])) {
+            $list_homecontroller->loginWithgg();
+        } else {
+            $list_homecontroller->list();
+        }
         break;
 }

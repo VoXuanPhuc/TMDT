@@ -14,7 +14,7 @@
                         <a href="type-product-<?= $item['MaDM'] ?>" class="cat-block">
                             <figure>
                                 <span>
-                                    <img src="<?= $item['HinhAnh'] ?>" alt="Category image">
+                                    <img src="public/assets/images/demos/demo-4/cats/<?= $item['HinhAnh']?>" alt="Category image">
                                 </span>
                             </figure>
 
@@ -781,81 +781,3 @@
         </div><!-- End .container -->
     </div><!-- End .icon-boxes-container -->
 </main><!-- End .main -->
-<div class="container newsletter-popup-container mfp-hide" id="newsletter-popup-form">
-    <div class="row justify-content-center">
-        <div class="col-10">
-            <div class="row no-gutters bg-white newsletter-popup-content">
-                <div class="col-xl-3-5col col-lg-7 banner-content-wrap">
-                    <div class="banner-content text-center">
-                        <img src="public/assets/images/meta.png" class="logo" alt="logo" width="60" height="15">
-                        <h2 class="banner-title">get <span>25<light>%</light></span> off</h2>
-                        <p>Subscribe to the Molla eCommerce newsletter to receive timely updates from your favorite
-                            products.</p>
-                        <h4 class="sent-notification"></h4>
-                        <form id="myForm">
-                            <div class="input-group input-group-round">
-                                <input id="name" type="hidden" value="Meta" placeholder="Nhập tên của bạn">
-                                <input type="email" id="email" class="form-control form-control-white" placeholder="Your Email Address" aria-label="Email Adress" required>
-                                <input id="subject" type="hidden" value="Promo code" placeholder=" Enter Subject">
-                                <?php if ($random_khuyenmai != NULL) { ?>
-                                    <?php foreach ($random_khuyenmai as $items) { ?>
-                                        <input type="hidden" id="body" rows="5" placeholder="Lời tin nhắn" value=" This code is your promo code and it can only be used once and it will expire within 5 days. Your code is : <?= $items['MaKM'] ?> ">
-                                        <br><br>
-                                <?php }
-                                } ?>
-                                <div class="input-group-append">
-                                    <button class="btn" type="button" onclick="sendEmail()" value="Send An Email"><span>go</span></button>
-                                </div><!-- .End .input-group-append -->
-                            </div><!-- .End .input-group -->
-                        </form>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="register-policy-2" required>
-                            <label class="custom-control-label" for="register-policy-2">Do not show this popup
-                                again</label>
-                        </div><!-- End .custom-checkbox -->
-                    </div>
-                </div>
-                <div class="col-xl-2-5col col-lg-5 ">
-                    <img src="public/assets/images/popup/newsletter/img-1.jpg" class="newsletter-img" alt="newsletter">
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript">
-        function sendEmail() {
-            var name = $("#name");
-            var email = $("#email");
-            var subject = $("#subject");
-            var body = $("#body");
-
-            if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body)) {
-                $.ajax({
-                    url: 'sendEmail.php',
-                    method: 'POST',
-                    dataType: 'json',
-                    data: {
-                        name: name.val(),
-                        email: email.val(),
-                        subject: subject.val(),
-                        body: body.val()
-                    },
-                    success: function(response) {
-                        $('#myForm')[0].reset();
-                        $('.sent-notification').text("Message sent successfully.");
-                    }
-                });
-            }
-        }
-
-        function isNotEmpty(caller) {
-            if (caller.val() == "") {
-                caller.css('border', '1px solid red');
-                return false;
-            } else
-                caller.css('border', '');
-
-            return true;
-        }
-    </script>
-</div>

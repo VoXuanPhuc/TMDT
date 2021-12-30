@@ -1,12 +1,36 @@
 <?php
 require_once("Models/home.php");
+require_once('./Models/login.php');
 class HomeController
 {
     var $home_model;
+    var $login_model;
     public function __construct()
     {
-        $this->home_model = new home();
+        $this->login_model = new Login();
+        $this->home_model = new Home();
     }
+
+    function loginWithgg()
+    {
+        require_once './Views/login/login.php';
+
+        $oAuth = new Google_Service_Oauth2($client);
+        $userData = $oAuth->userinfo_v2_me->get();
+        $this->login_model->insertDataGG($userData);
+        exit();
+
+        if (isset($token["error"]) && ($token["error"] != "invalid_grant")) {
+            // get data from google
+            // $oAuth = new Google_Service_Oauth2($client);
+            // $userData = $oAuth->userinfo_v2_me->get();
+            // $this->login_model->insertDataGG($userData);
+        } else {
+            header('Location: ../../baeshop.com');
+            exit();
+        }
+    }
+
     function list()
     {
         $data_categories = $this->home_model->categories();
