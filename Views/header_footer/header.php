@@ -225,7 +225,7 @@
                             <a href="categoris-realmi"> Realmi</a>
                         </li>
                         <li class="megamenu-container">
-                            <a href="categoris-viettel">Viettel</a>
+                            <a href="categoris-oppo">Oppo</a>
                         </li>
                     </ul><!-- End .menu -->
                 </nav><!-- End .main-nav -->
