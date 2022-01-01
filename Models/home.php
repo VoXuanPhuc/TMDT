@@ -3,12 +3,6 @@
     class home extends model{
         function sanpham_noibat()
         {
-            //SELECT DISTINCT `sanpham`.`TenSP`,`HinhAnh1`,`DonGia` FROM `chitiethoadon` JOIN `sanpham` on `chitiethoadon`.`MaSP`=`sanpham`.`MaSP`
-            // $query = "SELECT * FROM sanpham WHERE MaSP = (SELECT MaSP sp FROM chitiethoadon GROUP BY MaSP ORDER BY COUNT(MaSP) DESC LIMIT 1)";
-            // $query ="SELECT * FROM sanpham WHERE TrangThai = 1 ORDER BY MaSP DESC LIMIT 9";
-            
-            //SELECT DISTINCT `chitiethoadon`.`MaSP`, `sanpham`.* FROM `chitiethoadon` JOIN `sanpham` WHERE chitiethoadon.MaSP = sanpham.MaSP
-            //SELECT DISTINCT `sanpham`.`TenSP`,`HinhAnh1`,`HinhAnh3`,`MaLSP` FROM `chitiethoadon` JOIN `sanpham` on `chitiethoadon`.`MaSP`=`sanpham`.`MaSP`
             $query= "SELECT DISTINCT `sanpham`.* FROM `chitiethoadon` JOIN `sanpham` WHERE chitiethoadon.MaSP = sanpham.MaSP";
             require("result.php");
             return $data;
