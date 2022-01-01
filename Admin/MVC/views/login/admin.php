@@ -59,7 +59,7 @@
                     <div class="widget-small danger coloured-icon"><i class='icon bx bxs-error-alt fa-3x'></i>
                         <div class="info">
                             <h4>Sắp hết hàng</h4>
-                            <p><b>4 sản phẩm</b></p>
+                            <p><b>0 sản phẩm</b></p>
                             <p class="info-tong">Số sản phẩm cảnh báo hết cần nhập thêm.</p>
                         </div>
                     </div>

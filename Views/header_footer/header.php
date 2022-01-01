@@ -210,25 +210,22 @@
                             <a href="store">Store</a>
                         </li>
                         <li class="megamenu-container">
-                            <a href="categoris-smartphone">Smart Phone</a>
+                            <a href="categoris-samsung">Samsung</a>
                         </li>
                         <li class="megamenu-container">
-                            <a href="categoris-laptop">Laptop</a>
+                            <a href="categoris-iphone">Apple</a>
                         </li>
                         <li class="megamenu-container">
-                            <a href="categoris-tablet">Tablet</a>
+                            <a href="categoris-sony">Sony</a>
                         </li>
                         <li class="megamenu-container">
-                            <a href="categoris-smartwacthes">Smart Watches</a>
+                            <a href="categoris-redmi">Redmi</a>
                         </li>
                         <li class="megamenu-container">
-                            <a href="categoris-digitalcameras"> Digital Cameras</a>
+                            <a href="categoris-realmi"> Realmi</a>
                         </li>
                         <li class="megamenu-container">
-                            <a href="categoris-televisions">Televisions</a>
-                        </li>
-                        <li class="megamenu-container">
-                            <a href="categoris-audio">Audio</a>
+                            <a href="categoris-oppo">Oppo</a>
                         </li>
                     </ul><!-- End .menu -->
                 </nav><!-- End .main-nav -->
