@@ -66,7 +66,7 @@
                     </span></td>
                   <td>$ <?= number_format($row['DonGia']) ?></td>
                   <td>
-                    <button class="btn btn-primary btn-sm trash" type="button" title="Xóa" onclick="location.href='./?mod=sanpham&act=delete&id=<?= $row['MaND'] ?>';confirm('Do you really want to delete?');"><i class="fas fa-trash-alt"></i></button>
+                    <button class="btn btn-primary btn-sm trash" type="button" title="Xóa" onclick="location.href='./?mod=sanpham&act=delete&id=<?= $row['MaSP'] ?>';confirm('Do you really want to delete?');"><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-primary btn-sm edit" onclick="location.href='./?mod=sanpham&act=edit&id=<?= $row['MaSP'] ?>'" type="button" title="Sửa" id="show-emp"><i class="fas fa-edit"></i></button>
                     <button class="btn btn-primary btn-sm edit" onclick="location.href='../?act=detail&id=<?= $row['MaSP'] ?>'" type="button" title="Xem" id="show-emp"><i class="fas fa-eye"></i></button>
                   </td>

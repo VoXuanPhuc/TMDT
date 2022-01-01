@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <!-- molla/coming-soon.html  22 Nov 2019 10:04:05 GMT -->
 
 <head>
