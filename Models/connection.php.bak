@@ -4,7 +4,7 @@ class connection{
     function __construct(){
         $severname = "localhost";
         $username = "root";
-        $password = "root";
+        $password = "";
         $db_name = "meta";
 
         //connect data

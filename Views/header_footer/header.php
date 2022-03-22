@@ -206,26 +206,29 @@
             <div class="header-center">
                 <nav class="main-nav">
                     <ul class="menu sf-arrows">
-                        <li class="megamenu-container" class="active">
+                       <li class="megamenu-container" class="active">
                             <a href="store">Store</a>
                         </li>
-                        <li class="megamenu-container">
-                            <a href="categoris-samsung">Samsung</a>
+                        <li class="megamenu-container" class="active">
+                            <a href="categoris-SmartPhones">Smart Phones</a>
                         </li>
                         <li class="megamenu-container">
-                            <a href="categoris-iphone">Apple</a>
+                            <a href="categoris-Laptop">Laptop</a>
                         </li>
                         <li class="megamenu-container">
-                            <a href="categoris-sony">Sony</a>
+                            <a href="categoris-Tablet">Tablet</a>
                         </li>
                         <li class="megamenu-container">
-                            <a href="categoris-redmi">Redmi</a>
+                            <a href="categoris-SmartWathes">Smart Wathes</a>
                         </li>
                         <li class="megamenu-container">
-                            <a href="categoris-realmi"> Realmi</a>
+                            <a href="categoris-DigitalCameras">Digital Cameras</a>
                         </li>
                         <li class="megamenu-container">
-                            <a href="categoris-oppo">Oppo</a>
+                            <a href="categoris-Televisions"> Televisions</a>
+                        </li>
+                        <li class="megamenu-container">
+                            <a href="categoris-Audio">Audio</a>
                         </li>
                     </ul><!-- End .menu -->
                 </nav><!-- End .main-nav -->
