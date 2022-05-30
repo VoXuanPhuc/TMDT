@@ -11,20 +11,29 @@ class login extends model
     {
         $query = "SELECT * FROM `nguoidung` WHERE TaiKhoan = '" . $data['taikhoan'] . "' AND matkhau = '" . $data['matkhau'] . "' AND trangthai = 1";
         $login = $this->conn->query($query)->fetch_assoc();
+
         if ($login !== NULL) {
+
             if ($login['MaQuyen'] == 2) {
                 $_SESSION['isLogin_Admin'] = true;
                 $_SESSION['login'] = $login;
             } else {
-                if ($_SESSION['MaQuyen'] == 3) {
-                    $_SESSION['isLogin_NhanVien'] = true;
+                if ($login['MaQuyen'] == 3) {
+                    $_SESSION['isNhanVien'] = true;
                     $_SESSION['login'] = $login;
                 } else {
                     $_SESSION['isLogin'] = true;
                     $_SESSION['login'] = $login;
                 }
             }
-            echo '<script> alert("Logged in successfully");window.location.href=".";</script>';
+            // echo ($_SESSION['login']['MaND']);
+            // echo ($_SESSION['isNhanVien']);
+            // return;
+            echo '<script> window.location.href=".";</script>';
+            // echo '<pre>';
+            // var_dump($_SESSION);
+            // echo '</pre>';
+            // return;
         } else {
             setcookie('msg1', 'Sign in failed', time() + 5);
             header('Location: account');
@@ -36,8 +45,8 @@ class login extends model
             unset($_SESSION['isLogin_Admin']);
             unset($_SESSION['login']);
         }
-        if (isset($_SESSION['isLogin_Nhanvien'])) {
-            unset($_SESSION['isLogin_Nhanvien']);
+        if (isset($_SESSION['isNhanVien'])) {
+            unset($_SESSION['isNhanVien']);
             unset($_SESSION['login']);
         }
         if (isset($_SESSION['isLogin'])) {
@@ -157,7 +166,7 @@ class login extends model
             if ($status) {
 
 
-                $query = "SELECT * FROM `nguoidung` WHERE Email = '" . $email."';";
+                $query = "SELECT * FROM `nguoidung` WHERE Email = '" . $email . "';";
                 $login = $this->conn->query($query)->fetch_assoc();
                 if ($login !== NULL) {
                     if ($login['MaQuyen'] == 2) {
@@ -165,7 +174,7 @@ class login extends model
                         $_SESSION['login'] = $login;
                     } else {
                         if ($_SESSION['MaQuyen'] == 3) {
-                            $_SESSION['isLogin_NhanVien'] = true;
+                            $_SESSION['isNhanVien'] = true;
                             $_SESSION['login'] = $login;
                         } else {
                             $_SESSION['isLogin'] = true;
@@ -191,7 +200,7 @@ class login extends model
                     $_SESSION['login'] = $login;
                 } else {
                     if ($_SESSION['MaQuyen'] == 3) {
-                        $_SESSION['isLogin_NhanVien'] = true;
+                        $_SESSION['isNhanVien'] = true;
                         $_SESSION['login'] = $login;
                     } else {
                         $_SESSION['isLogin'] = true;

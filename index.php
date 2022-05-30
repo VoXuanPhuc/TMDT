@@ -62,7 +62,7 @@ switch ($act) {
             }
             break;
         } else {
-            if ((isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) || (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true)) {
+            if ((isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) || (isset($_SESSION['isNhanVien']) && $_SESSION['isNhanVien'] == true)) {
                 switch ($act) {
                     case 'dangxuat':
                         $controller_obj->dangxuat();

@@ -8,44 +8,53 @@ class login
         $conn_obj = new Connection();
         $this->conn = $conn_obj->conn;
     }
-    function tk_sanpham($id){
+    function tk_sanpham($id)
+    {
         $query = "SELECT count(MaSP) as Count FROM sanpham WHERE MaDM = $id";
 
         return $this->conn->query($query)->fetch_assoc();
     }
-    function count_sanpham(){
+    function count_sanpham()
+    {
         $query = "SELECT count(MaSP) as Count FROM sanpham";
 
         return $this->conn->query($query)->fetch_assoc();
     }
-    function tk_thongbao(){
+    function tk_thongbao()
+    {
         $query = "SELECT count(MaHD) as Count FROM HoaDon WHERE TrangThai = 0";
 
         return $this->conn->query($query)->fetch_assoc();
     }
-    function tk_dtthang($m){
+    function tk_dtthang($m)
+    {
         $query = "SELECT SUM(TongTien) as Count FROM HoaDon WHERE MONTH(NgayLap) = $m And TrangThai = 1";
 
         return $this->conn->query($query)->fetch_assoc();
     }
-    function tk_dtnam($y){
+    function tk_dtnam($y)
+    {
         $query = "SELECT SUM(TongTien) as Count FROM HoaDon WHERE YEAR(NgayLap) = $y And TrangThai = 1";
 
         return $this->conn->query($query)->fetch_assoc();
     }
-    function tk_nguoidung($id){
+    function tk_nguoidung($id)
+    {
         $query = "SELECT count(MaND) as Count FROM NguoiDung WHERE MaQuyen = $id";
-        
+
         return $this->conn->query($query)->fetch_assoc();
     }
     function list_sanpham()
     {
         $query = "select * from sanpham ORDER BY MaSP DESC";
 
+        return $this->conn->query($query)->fetch_assoc();
+    }
+    function count_sanpham_cannhap()
+    {
+        $query = "SELECT COUNT(masp) as Count FROM SanPham WHERE soluong < 4";
         require("result.php");
-
         return $data;
-        
     }
     function list_nguoidung()
     {
@@ -54,6 +63,5 @@ class login
         require("result.php");
 
         return $data;
-        
     }
 }
