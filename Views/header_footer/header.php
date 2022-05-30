@@ -51,18 +51,18 @@
                                 </div>
                             </li>
                             <li>
-                                <?php if (isset($_SESSION['isLogin_Admin'])) { ?>
+                                <?php if ((isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) || (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true)) { ?>
                                     <a href="personal"><?= $_SESSION['login']['Ho'] ?> <?= $_SESSION['login']['Ten'] ?></a>
-                                   <li><a href="./?act=taikhoan&xuli=dangxuat">Sign Out</a></li>
-                                    
-                                <?php } elseif (isset($_SESSION['isLogin'])) { ?>
-                                    <a href="personal"><?= $_SESSION['login']['Ho'] ?> <?= $_SESSION['login']['Ten'] ?></a>
-                                <?php } else { ?>
-                                    <a href="#signin-modal" data-toggle="modal">Sign in / Sign up</a>
-                                <?php   } ?>
-                            </li>
-                        </ul>
+                            <li><a href="./?act=taikhoan&xuli=dangxuat">Sign Out</a></li>
+
+                        <?php } elseif (isset($_SESSION['isLogin'])) { ?>
+                            <a href="personal"><?= $_SESSION['login']['Ho'] ?> <?= $_SESSION['login']['Ten'] ?></a>
+                        <?php } else { ?>
+                            <a href="#signin-modal" data-toggle="modal">Sign in / Sign up</a>
+                        <?php   } ?>
                     </li>
+                </ul>
+                </li>
                 </ul><!-- End .top-menu -->
             </div><!-- End .header-right -->
 
@@ -96,7 +96,8 @@
             </div>
 
             <div class="header-right">
-                <?php if (isset($_SESSION['isLogin_Admin'])) { ?>
+                <?php  ?>
+                <?php if (((isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true)) || ((isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true))) { ?>
                     <div class="dropdown compare-dropdown">
                         <a href="Admin" class="dropdown-toggle">
                             <div class="icon">
@@ -206,7 +207,7 @@
             <div class="header-center">
                 <nav class="main-nav">
                     <ul class="menu sf-arrows">
-                       <li class="megamenu-container" class="active">
+                        <li class="megamenu-container" class="active">
                             <a href="store">Store</a>
                         </li>
                         <li class="megamenu-container" class="active">
