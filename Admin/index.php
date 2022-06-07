@@ -215,7 +215,7 @@ if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
             }
             break;
         default:
-            echo '<script>alert("Bạn được quyền xem trang này")</script>';
+            echo '<script>alert("Bạn không được quyền xem trang này")</script>';
             echo '<script>history.go(-1)</script>';
             // require_once('MVC/controllers/LoginController.php');
             // $controller_obj = new LoginController();
